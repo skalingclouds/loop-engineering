@@ -10,7 +10,11 @@ Same patterns, different tools. Skills and state schemas are shared; only schedu
 | GitHub Actions | [github-actions/](./github-actions/) |
 | MCP connectors | [mcp/](./mcp/) |
 
+New in this release of the reference: **Changelog Drafter** pattern + full starter (see patterns/ and starters/changelog-drafter).
+
 Start with [primitives-matrix.md](../docs/primitives-matrix.md) to map capabilities.
+
+**New pattern**: [Changelog Drafter](../patterns/changelog-drafter.md) — low-risk, high-ROI loop for release notes. Starter available for all tools.
 
 **Copy-paste starters** (L1 daily triage):
 

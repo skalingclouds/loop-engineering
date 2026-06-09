@@ -23,6 +23,7 @@ npx @cobusgreyling/loop-init . -p pr-babysitter -t claude
 | [ci-sweeper](./ci-sweeper/) | CI Sweeper | Grok, Claude, Codex | L2 assisted |
 | [dependency-sweeper](./dependency-sweeper/) | Dependency Sweeper | Grok, Claude, Codex | L2 patch-only |
 | [post-merge-cleanup](./post-merge-cleanup/) | Post-Merge Cleanup | Grok, Claude, Codex | L1 → L2 |
+| [changelog-drafter](./changelog-drafter/) | Changelog Drafter | Grok, Claude, Codex | L1 draft → L2 |
 
 After copying:
 

@@ -14,7 +14,9 @@ flowchart TD
     H -->|yes| I[Dependency Sweeper]
     H -->|no| J{Merge debt / TODOs piling up?}
     J -->|yes| K[Post-Merge Cleanup]
-    J -->|no| G
+    J -->|no| L{Release notes / changelog stale?}
+    L -->|yes| M[Changelog Drafter]
+    L -->|no| G
 ```
 
 ## Quick reference
@@ -26,6 +28,7 @@ flowchart TD
 | "What should I work on?" every morning | [Daily Triage](../patterns/daily-triage.md) | **L1 report-only week one** |
 | Outdated packages / CVE alerts | [Dependency Sweeper](../patterns/dependency-sweeper.md) | L2 patch-only, denylist majors |
 | TODOs and cleanup after merges | [Post-Merge Cleanup](../patterns/post-merge-cleanup.md) | L1 off-peak, small fixes only |
+| Stale or missing release notes | [Changelog Drafter](../patterns/changelog-drafter.md) | **L1** (draft only first), very low risk |
 
 ## Overlap rules
 
@@ -35,6 +38,7 @@ flowchart TD
 | Daily Triage + anything | Daily Triage reports; action loops execute. Triage does not auto-fix in L1 |
 | Dependency Sweeper + CI Sweeper | Pause Dependency Sweeper while CI is red on main |
 | Post-Merge + PR Babysitter | Post-Merge runs off-peak only |
+| Changelog Drafter + anything | Changelog Drafter is read-mostly and safe to run alongside others; it should not auto-publish |
 
 ## First loop recommendation
 

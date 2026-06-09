@@ -10,6 +10,7 @@ Real-world loop engineering — including failures. Contribute yours via [CONTRI
 | [dependency-sweeper-week-one.md](./dependency-sweeper-week-one.md) | Dependency Sweeper | Verifier must match CI install path |
 | [multi-loop-collision.md](./multi-loop-collision.md) | Multi-loop | Branch lock + collision detection |
 | [l1-to-l2-graduation.md](./l1-to-l2-graduation.md) | Daily Triage | Calibration before auto-fix |
+| [changelog-drafter-week-one.md](./changelog-drafter-week-one.md) | Changelog Drafter | Low-risk, high-ROI L1 win |
 
 **Template for new stories:**
 

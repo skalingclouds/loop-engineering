@@ -1,68 +1,44 @@
-# MCP Connector Cookbook
+# MCP / Connectors Cookbook
 
-Minimal MCP setups for loop patterns. Start **read-only** (L1); expand scope only after trust.
+Practical, scoped examples for connecting loops to real tools via MCP (or equivalent plugins/connectors).
 
-## GitHub MCP (L1 — read)
+**Core principle**: Give loops the *minimum* privilege they need. Prefer read + comment over write. Use human gates + worktrees for anything that mutates state.
 
-**Use in**: Daily Triage, PR Babysitter (discovery)
+## Quick Patterns
 
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
-      }
-    }
-  }
-}
-```
+| Connector | Typical Use | Recommended Scope | Pattern Fit |
+|-----------|-------------|-------------------|-------------|
+| GitHub (read + propose) | Discover PRs/issues, post comments, open draft PRs | `contents: read`, `pull_requests: write` (with bot identity) | PR Babysitter, Daily Triage, Changelog Drafter |
+| Linear | Read/update issues from state, create follow-up tickets | API key with project + issue write limited to specific teams | Post-Merge, Dependency Sweeper, CI Sweeper |
+| Slack (read) | Ingest threads / alerts the loop should triage | Read-only on specific channels | Daily Triage |
+| Safe propose flow | Any write action | Loop opens PR / draft / comment. Human merges or approves. | All L2+ patterns |
 
-**Scopes**: `repo:status`, `read:org`, `read:user` — no `repo` write until L2.
+## Example Configurations
 
-**Loop prompt snippet**:
-```
-Read open PRs and recent CI conclusions via GitHub MCP. Do not comment or merge. Update STATE.md only.
-```
+See the files in this directory:
 
-## GitHub MCP (L2 — comment)
+- `github-readonly.mcp.json` (existing) — safe starting point for discovery.
+- `github-propose.json` — read + limited write for comments and draft PRs (sign comments as the loop).
+- `linear.json` — example for creating/updating issues from loop state.
+- `slack-read.json` — ingest channel threads into triage.
+- `safe-write-pattern.md` — the recommended architecture for any mutating action.
 
-**Use in**: PR Babysitter, CI Sweeper
-
-Add scope: `public_repo` or fine-grained **Pull requests: Read and write** (comments only).
-
-**Gate**: Bot signs comments: `🤖 Loop Engineering — PR Babysitter`
-
-## Linear MCP (L1 — read)
-
-**Use in**: Daily Triage
+## Usage in a Loop Prompt (Grok example)
 
 ```
-Connect Linear MCP with read-only API key. Triage assigned issues into STATE.md High Priority. No ticket creation in week one.
+/loop 1d Use the github-propose MCP. Scan open PRs with pr-review-triage. For actionable low-risk items on allowlisted paths: open worktree, minimal-fix, verifier. Then post a signed comment on the PR with a link to the worktree diff. Never merge.
 ```
 
-## Slack MCP (L1 — read)
+Always:
+- Declare the bot identity in comments ("🤖 Loop Engineering — Changelog Drafter").
+- Record the MCP action + result in STATE or the pattern-specific state file.
+- Have an explicit denylist in the skill or LOOP.md.
 
-**Use in**: Daily Triage
+## Safety Notes
 
-```
-Read #engineering channel last 24h for incident threads. Summarize in Watch Items. Never post to Slack unattended in L1.
-```
+- Never give a loop the ability to push tags or create releases without an explicit human gate (even for changelog).
+- For Linear / ticketing: the loop can *propose* or *update* status; a human (or a very trusted allowlist) does final close on high-severity items.
+- Test new connectors in report-only (L1) mode first.
+- Log every MCP call the loop makes (the `monitor` tool or GitHub Action logs are your friend).
 
-## Scope matrix
-
-| Pattern | L1 MCP | L2 MCP |
-|---------|--------|--------|
-| Daily Triage | GitHub read, Linear read | — |
-| PR Babysitter | GitHub read | GitHub PR comments |
-| CI Sweeper | GitHub Actions read | PR comments on fix branches |
-| Dependency Sweeper | — | GitHub PR create (no auto-merge) |
-| Post-Merge Cleanup | GitHub read (recent merges) | Small PR propose |
-
-## Not required
-
-MCP is optional for L1 daily triage on small repos. Git + local STATE.md is enough for week one.
-
-See [docs/safety.md](../../docs/safety.md) for denylist and least-privilege rules.
+See also: [docs/safety.md](../../docs/safety.md), [docs/operating-loops.md](../../docs/operating-loops.md), and the individual pattern docs for human gate recommendations.

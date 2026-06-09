@@ -76,7 +76,7 @@ Scaffold automatically: `npx @cobusgreyling/loop-init . --pattern daily-triage -
 
 ## Appendix: Other agent environments (capability mapping)
 
-No dedicated starters yet — map capabilities to the same loop shape:
+No dedicated starters yet for the newest patterns (Changelog Drafter is trivial to port — it is mostly read + draft). Map capabilities to the same loop shape:
 
 | Primitive | Cursor | Windsurf | Aider |
 |-----------|--------|----------|-------|

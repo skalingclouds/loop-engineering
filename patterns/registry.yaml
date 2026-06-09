@@ -76,3 +76,18 @@ patterns:
     starter: starters/dependency-sweeper
     week_one_mode: L2
     token_cost: medium
+
+  - id: changelog-drafter
+    name: Changelog Drafter
+    file: changelog-drafter.md
+    goal: Scan merged PRs and commits, draft categorized high-quality release notes or CHANGELOG entries for human review
+    cadence: 1d
+    risk: low
+    tools: [grok, claude-code, codex, github-actions]
+    skills: [changelog-scan, draft-release-notes, loop-verifier]
+    state: changelog-drafter-state.md
+    phases: [scan-merges, categorize, draft, review, publish]
+    human_gates: [breaking-changes, security, major-features, marketing-sensitive]
+    starter: starters/changelog-drafter
+    week_one_mode: L1
+    token_cost: low

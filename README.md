@@ -44,7 +44,7 @@ A loop is a recursive goal: you define a purpose and the AI iterates (often with
 | [Pattern Picker](docs/pattern-picker.md) | Which loop to run first — **start here if unsure** |
 | [Primitives Matrix](docs/primitives-matrix.md) | Grok vs Claude Code vs Codex — bookmark this |
 | [Loop Design Checklist](docs/loop-design-checklist.md) | Ship readiness rubric |
-| [Patterns](patterns/README.md) | PR babysitter, daily triage, CI sweeper, post-merge |
+| [Patterns](patterns/README.md) | 6 production patterns including the new low-risk Changelog Drafter |
 | [Starters](starters/) | Clone-and-run kits (Grok, Claude Code, Codex) |
 | [loop-audit](tools/loop-audit/) | Loop Readiness Score CLI — `npx @cobusgreyling/loop-audit` |
 | [loop-init](tools/loop-init/) | Scaffold starters — `npx @cobusgreyling/loop-init` |
@@ -106,11 +106,12 @@ flowchart LR
 | [PR Babysitter](patterns/pr-babysitter.md) | 5–15m | [pr-babysitter](starters/pr-babysitter/) | L1 watch | High |
 | [CI Sweeper](patterns/ci-sweeper.md) | 5–15m | [ci-sweeper](starters/ci-sweeper/) | L2 cautious | Very high |
 | [Dependency Sweeper](patterns/dependency-sweeper.md) | 6h–1d | [dependency-sweeper](starters/dependency-sweeper/) | L2 patch-only | Medium |
+| [Changelog Drafter](patterns/changelog-drafter.md) | 1d or tag | [changelog-drafter](starters/changelog-drafter/) | **L1** draft | Low |
 | [Post-Merge Cleanup](patterns/post-merge-cleanup.md) | 1d–6h | [post-merge-cleanup](starters/post-merge-cleanup/) | **L1** off-peak | Low |
 
 Not sure which to pick? See [pattern-picker](docs/pattern-picker.md).
 
-Machine-readable index: [patterns/registry.yaml](patterns/registry.yaml)
+Machine-readable index: [patterns/registry.yaml](patterns/registry.yaml) (now 6 patterns)
 
 ## Getting Started (5 minutes)
 

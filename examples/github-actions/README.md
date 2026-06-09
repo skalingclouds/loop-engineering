@@ -1,5 +1,7 @@
 # GitHub Actions Examples
 
+Includes triggers for the new **Changelog Drafter** pattern (daily or on tags). See `changelog-drafter.yml`.
+
 Event-driven and scheduled loops **without** a TUI session. These workflows:
 
 1. Gather context (CI, merges, failures)

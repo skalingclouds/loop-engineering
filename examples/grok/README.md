@@ -1,4 +1,6 @@
-# Grok Build TUI Examples
+# Grok Build TUI
+
+New: See [changelog-drafter.md](./changelog-drafter.md) for the low-risk, high-ROI release notes pattern. Examples
 
 Native primitives: `/loop`, `scheduler_create`, worktree isolation, skills, MCP, sub-agents.
 

@@ -31,7 +31,7 @@ title: Loop Engineering — Showcase
 </nav>
 
 <header class="hero wrap">
-  <div class="badge">Open source · Tool-agnostic · Production-ready · L3 dogfood score</div>
+  <div class="badge">Open source · Tool-agnostic · Production-ready · L3 dogfood score · 6 patterns</div>
   <h1>Design the system<br>that prompts your agents</h1>
   <p class="lead">
     Loop engineering moves you from "I prompt → agent responds → I prompt again"
@@ -194,14 +194,26 @@ title: Loop Engineering — Showcase
       <a class="link" href="https://github.com/cobusgreyling/loop-engineering/blob/main/patterns/dependency-sweeper.md">Read pattern →</a>
       <a class="link" href="https://github.com/cobusgreyling/loop-engineering/tree/main/starters/dependency-sweeper" style="margin-left:12px">Starter →</a>
     </article>
+
+    <article class="pattern-card">
+      <span class="tag" style="color:#ffb347;">New · Low risk</span>
+      <h3>Changelog Drafter</h3>
+      <p>Scan merges &amp; commits, produce polished categorized release notes drafts. Human approves before publish. Huge leverage, tiny risk.</p>
+      <div class="pattern-meta">
+        <span>⏱ 1d or tag</span>
+        <span>◆ Low risk</span>
+      </div>
+      <a class="link" href="https://github.com/cobusgreyling/loop-engineering/blob/main/patterns/changelog-drafter.md">Read pattern →</a>
+      <a class="link" href="https://github.com/cobusgreyling/loop-engineering/tree/main/starters/changelog-drafter" style="margin-left:12px">Starter →</a>
+    </article>
   </div>
   <div class="stats">
     <div class="stat">
-      <div class="num">5</div>
+      <div class="num">6</div>
       <div class="label">Patterns</div>
     </div>
     <div class="stat">
-      <div class="num">7</div>
+      <div class="num">8</div>
       <div class="label">Starter kits</div>
     </div>
     <div class="stat">
@@ -231,7 +243,10 @@ npx @cobusgreyling/loop-init . --pattern daily-triage --tool grok
 npx @cobusgreyling/loop-audit . --suggest
 
 <span class="comment"># Grok — report only, week one</span>
-<span class="cmd">/loop</span> <span class="flag">1d</span> Run loop-triage. Update STATE.md. No auto-fix.</pre>
+<span class="cmd">/loop</span> <span class="flag">1d</span> Run loop-triage. Update STATE.md. No auto-fix.
+
+<span class="comment"># Also try the new low-risk pattern</span>
+<span class="cmd">/loop</span> <span class="flag">1d</span> Run changelog-scan + draft-release-notes. Write RELEASE_NOTES_DRAFT.md. Human review only.</pre>
   </div>
   <p style="margin-top: 24px; text-align: center;">
     <a href="https://github.com/cobusgreyling/loop-engineering/tree/main/starters">All starters</a>
@@ -265,6 +280,29 @@ npx @cobusgreyling/loop-audit . --suggest
       <h3>Pattern Picker</h3>
       <p>CI red? PRs stalling? Morning chaos? Pick the right loop first.</p>
       <a class="link" href="https://github.com/cobusgreyling/loop-engineering/blob/main/docs/pattern-picker.md">Choose pattern →</a>
+    </article>
+  </div>
+</section>
+
+<section id="observability" class="wrap" style="padding-top: 0;">
+  <p class="section-label">Stay in control</p>
+  <h2 class="section-title">Observability &amp; cost</h2>
+  <p class="section-desc">Loops should be boring and transparent. Use state files, run logs, and budgets.</p>
+  <div class="patterns">
+    <article class="pattern-card">
+      <h3>STATE.md + pattern state</h3>
+      <p>The durable memory spine. Every loop reads it at start and writes outcomes.</p>
+      <a class="link" href="https://github.com/cobusgreyling/loop-engineering/blob/main/STATE.md">See example →</a>
+    </article>
+    <article class="pattern-card">
+      <h3>Run logs &amp; budgets</h3>
+      <p>Structured JSON per run + daily token / spawn limits. Detect problems before they explode.</p>
+      <a class="link" href="https://github.com/cobusgreyling/loop-engineering/tree/main/stories">See sample logs →</a>
+    </article>
+    <article class="pattern-card">
+      <h3>loop-audit on every PR</h3>
+      <p>Automated Loop Readiness Score + suggestions. The reference dogfoods it.</p>
+      <a class="link" href="https://github.com/cobusgreyling/loop-engineering/tree/main/tools/loop-audit">Run it →</a>
     </article>
   </div>
 </section>

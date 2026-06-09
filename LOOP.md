@@ -30,9 +30,15 @@ The goal of this repo is to be the canonical, copyable, high-signal collection o
 - `audit.yml` posts loop readiness scores on PRs
 - Future: sweeper reacting to failing validate/audit runs
 
+### Changelog Drafter (L1 — draft only, high value)
+- Cadence: 1d or on release prep (manual or tag-triggered)
+- Starter: `starters/changelog-drafter`
+- Produces `RELEASE_NOTES_DRAFT.md` (or section for GitHub release). Human approves before publish or CHANGELOG update.
+- Excellent low-risk companion to Post-Merge Cleanup. This reference repo should run it for future releases.
+
 ## Multi-loop coordination
 
-See [docs/multi-loop.md](docs/multi-loop.md). Priority: CI Sweeper → PR Babysitter → Dependency Sweeper → Post-Merge → Daily Triage (report).
+See [docs/multi-loop.md](docs/multi-loop.md). Priority: CI Sweeper → PR Babysitter → Dependency Sweeper → Post-Merge / Changelog Drafter (off-peak) → Daily Triage (report).
 
 ## Worktrees
 
