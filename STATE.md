@@ -1,6 +1,6 @@
 # Loop State — loop-engineering reference
 
-Last run: 2026-06-30T10:45:45Z (automated daily-triage workflow)
+Last run: 2026-07-01T10:58:40Z (automated daily-triage workflow)
 
 ## High Priority (loop is acting or waiting on human)
 
@@ -12,7 +12,7 @@ Last run: 2026-06-30T10:45:45Z (automated daily-triage workflow)
 
 - Expand contributor failure stories (dependency sweeper, multi-loop).
 - Collect a production story for Post-Merge Cleanup.
-- Validate `loop-init` scaffolds on fresh projects across all patterns (`opencode` daily-triage shipped; L2 patterns still Grok-first).
+- Validate `loop-init` scaffolds on fresh projects across all patterns.
 
 ## Recent Noise (ignored this run)
 
