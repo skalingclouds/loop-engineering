@@ -13,6 +13,7 @@ Thank you to everyone who shipped docs, stories, examples, and tool fixes.
 | [@jiaobotao](https://github.com/jiaobotao) | #141 Add Hermes Agent example (daily-triage) + primitives matrix column |
 | [@k-anushka14](https://github.com/k-anushka14) | #156 docs: add Cursor PR Babysitter example |
 | [@roian6](https://github.com/roian6) | #127 docs: expand Aider primitives appendix |
+| [@sololys](https://github.com/sololys) | story: `ky-cut-surface-generation-vs-consequence.md` |
 | [@Zhang-986](https://github.com/Zhang-986) | #138 fix(loop-sync): honor json output flag |
 
 ## Your first PR
