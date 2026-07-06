@@ -3,6 +3,7 @@ import { spawn } from 'node:child_process';
 import { cp, mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { printContributorCta } from './contributor-cta.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PACKAGE_ROOT = path.resolve(__dirname, '..');
 const MONOREPO_STARTERS = path.resolve(PACKAGE_ROOT, '../../starters');
@@ -533,7 +534,7 @@ npm run lint
     console.log(`  ${firstLoopCommand(pattern, tool)}`);
     console.log('');
     console.log(`Estimate cost: npx @cobusgreyling/loop-cost --pattern ${pattern} --level L1`);
-    console.log('');
+    printContributorCta();
 }
 async function readDirNames(dir) {
     const { readdir } = await import('node:fs/promises');

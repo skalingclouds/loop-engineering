@@ -58,6 +58,8 @@ test('loop-init prints Loop Ready score after scaffold', async () => {
     assert.match(stdout, /Loop Ready:/);
     assert.match(stdout, /\/100/);
     assert.match(stdout, /--badge/);
+    assert.match(stdout, /Contribute \(~15 min tasks\):/);
+    assert.match(stdout, /discussions\/123/);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

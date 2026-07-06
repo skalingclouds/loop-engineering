@@ -35,5 +35,14 @@ create_issue "Add examples/hermes/README.md index" "good first issue,docs" "$BOD
 create_issue "Add Windsurf PR Babysitter example doc" "good first issue,docs" "$BODY_DIR/windsurf-pr-babysitter-example.md"
 create_issue "Share a Post-Merge Cleanup production story" "good first issue,story" "$BODY_DIR/post-merge-cleanup-story.md"
 
+# Wave 2 — refresh backlog after Jul 2026 merges (idempotent; skips existing titles)
+create_issue "Add loop-context subsection to QUICKSTART" "good first issue,docs" "$BODY_DIR/quickstart-loop-context.md"
+create_issue "Add loop-mcp-server subsection to QUICKSTART" "good first issue,docs" "$BODY_DIR/quickstart-mcp-server.md"
+create_issue "Link Aider appendix from examples README" "good first issue,docs" "$BODY_DIR/examples-aider-link.md"
+create_issue "Add Hermes to examples README tool directory" "good first issue,docs" "$BODY_DIR/hermes-examples-readme.md"
+create_issue "Share an Issue Triage week-one story" "good first issue,story" "$BODY_DIR/issue-triage-story.md"
+create_issue "Add Opencode constraints example doc" "good first issue,docs" "$BODY_DIR/opencode-constraints-example.md"
+create_issue "Share a multi-loop coordination story" "good first issue,story" "$BODY_DIR/multi-loop-story.md"
+
 echo "Done. Open backlog:"
 echo "https://github.com/cobusgreyling/loop-engineering/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"

@@ -247,7 +247,7 @@ Addy Osmani:
 
 ## Help wanted
 
-**First PR?** Start with the [contributor quickstart](https://github.com/cobusgreyling/loop-engineering/discussions/123) — ~10 min to ~1 hr tasks with same-day review on stories and adopters.
+**First PR?** Start with the [contributor quickstart](https://github.com/cobusgreyling/loop-engineering/discussions/123) — ~10 min to ~1 hr tasks with same-day review on stories and adopters. See [CONTRIBUTORS.md](CONTRIBUTORS.md) for everyone who has shipped so far.
 
 | Pick one | Issue |
 |----------|-------|
